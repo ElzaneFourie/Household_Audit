@@ -27,3 +27,19 @@ def initialise_database():
         )""")
     conn.commit()
     conn.close()
+    
+def add_member(member_name):
+    folder_name = member_name.lower().replace(" ", "_")
+    conn = sqlite3.connect("data/household.db")
+    cursor = conn.cursor()
+    cursor.execute("""INSERT INTO household_members (name, folder_name) VALUES (?,?)""", (member_name, folder_name))
+    conn.commit()
+    conn.close()
+    os.makedirs(f"data/statements/{folder_name}", exist_ok = True)
+
+def get_members():
+    conn = sqlite3.connect("data/household.db")
+    cursor = conn.cursor()
+    cursor.execute("""SELECT * FROM household_members""")
+    conn.close()
+    return cursor.fetchall()
