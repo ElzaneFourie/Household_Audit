@@ -1,7 +1,20 @@
 import ollama, json
+from csv_processing import load_settings
 
-#def merchant_hint(description):
-    
+def merchant_hint(description):
+    settings = load_settings()
+    for merchant, categories in settings["local_merchants_categories"].items():
+        if merchant in description.lower():
+            merchant_hint = f"""
+            This transaction appears to be from {merchant} which typically covers: {categories}
+            Use the description and the amount to determine the most accurate category
+            """
+            break
+    else:
+        merchant_hint = ""
+        
+    return merchant_hint
+            
 
 def categorise_transaction(description, amount=None):
     system_prompt = """
@@ -15,6 +28,7 @@ def categorise_transaction(description, amount=None):
         - Rent & Housing
         - Medical & Health
         - Insurance
+        - Electronics & Appliances
         - Entertainment & Subscriptions
         - Education
         - Clothing & Personal Care
@@ -32,7 +46,7 @@ def categorise_transaction(description, amount=None):
         Transaction description to categorise:
         """
         
-    prompt = system_prompt + description #+ merchant_hint(description) #This will return the text processed from settings with merchant hint
+    prompt = system_prompt + description + merchant_hint(description)
 
     response = ollama.chat(
         model = "llama3.2",
@@ -41,5 +55,3 @@ def categorise_transaction(description, amount=None):
     
     result = json.loads(response["message"]["content"])
     return result["category"]
-
-print(categorise_transaction("Purch Checkers Sixty"))
