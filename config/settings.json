@@ -2,7 +2,7 @@
     "household_name": "",
 
     "members": [],
-
+    
     "bank_mappings": {
         "capitec": {
             "date": "Transaction Date",
@@ -12,110 +12,313 @@
             "amount_type": "split"
         }
     },
-
     "local_merchants_categories": {
-        "checkers": ["Groceries"],
-        "checkers sixty": ["Groceries"],
-        "sixty60": ["Groceries"],
-        "woolworths": ["Groceries", "Clothing & Personal Care"],
-        "woolworths food": ["Groceries"],
-        "pick n pay": ["Groceries"],
-        "pnp": ["Groceries"],
-        "spar": ["Groceries"],
-        "food lover": ["Groceries"],
-        "food lovers": ["Groceries"],
-        "usave": ["Groceries"],
-        "shoprite": ["Groceries"],
-        "boxer": ["Groceries"],
-        "kfc": ["Dining & Takeaways"],
-        "mcdonalds": ["Dining & Takeaways"],
-        "mcdonald's": ["Dining & Takeaways"],
-        "steers": ["Dining & Takeaways"],
-        "nandos": ["Dining & Takeaways"],
-        "nando's": ["Dining & Takeaways"],
-        "debonairs": ["Dining & Takeaways"],
-        "pizza hut": ["Dining & Takeaways"],
-        "burger king": ["Dining & Takeaways"],
-        "wimpy": ["Dining & Takeaways"],
-        "roman's pizza": ["Dining & Takeaways"],
-        "romans pizza": ["Dining & Takeaways"],
-        "ocean basket": ["Dining & Takeaways"],
-        "uber eats": ["Dining & Takeaways"],
-        "ubereats": ["Dining & Takeaways"],
-        "mr d": ["Dining & Takeaways"],
-        "mr delivery": ["Dining & Takeaways"],
-        "astron": ["Transport & Fuel"],
-        "astron energy": ["Transport & Fuel"],
-        "engen": ["Transport & Fuel"],
-        "shell": ["Transport & Fuel"],
-        "bp": ["Transport & Fuel"],
-        "caltex": ["Transport & Fuel"],
-        "sasol": ["Transport & Fuel"],
-        "bolt": ["Transport & Fuel"],
-        "gautrain": ["Transport & Fuel"],
-        "uber": ["Transport & Fuel"],
-        "eskom": ["Utilities"],
-        "city power": ["Utilities"],
-        "rand water": ["Utilities"],
-        "telkom": ["Utilities"],
-        "vodacom": ["Utilities"],
-        "mtn": ["Utilities"],
-        "cell c": ["Utilities"],
-        "rain": ["Utilities"],
-        "afrihost": ["Utilities"],
-        "webafrica": ["Utilities"],
-        "medihelp": ["Medical & Health"],
-        "bonitas": ["Medical & Health"],
-        "clicks": ["Medical & Health"],
-        "clicks pharmacy": ["Medical & Health"],
-        "dis-chem": ["Medical & Health"],
-        "dischem": ["Medical & Health"],
-        "netcare": ["Medical & Health"],
-        "mediclinic": ["Medical & Health"],
-        "life healthcare": ["Medical & Health"],
-        "outsurance": ["Insurance"],
-        "santam": ["Insurance"],
-        "old mutual": ["Insurance"],
-        "miway": ["Insurance"],
-        "king price": ["Insurance"],
-        "takealot": ["Electronics & Appliances"],
-        "amazon": ["Electronics & Appliances"],
-        "game stores": ["Electronics & Appliances"],
-        "game": ["Electronics & Appliances"],
-        "incredible connection": ["Electronics & Appliances"],
-        "ict": ["Electronics & Appliances"],
-        "hifi corp": ["Electronics & Appliances"],
-        "apple": ["Electronics & Appliances"],
-        "istore": ["Electronics & Appliances"],
-        "samsung": ["Electronics & Appliances"],
-        "evetech": ["Electronics & Appliances"],
-        "wootware": ["Electronics & Appliances"],
-        "netflix": ["Entertainment & Subscriptions"],
-        "spotify": ["Entertainment & Subscriptions"],
-        "showmax": ["Entertainment & Subscriptions"],
-        "dstv": ["Entertainment & Subscriptions"],
-        "amazon prime": ["Entertainment & Subscriptions"],
-        "google play": ["Entertainment & Subscriptions"],
-        "nintendo": ["Entertainment & Subscriptions"],
-        "steam": ["Entertainment & Subscriptions"],
-        "mr price": ["Clothing & Personal Care"],
-        "mrp": ["Clothing & Personal Care"],
-        "ackermans": ["Clothing & Personal Care"],
-        "pep": ["Clothing & Personal Care"],
-        "pep stores": ["Clothing & Personal Care"],
-        "edgars": ["Clothing & Personal Care"],
-        "jet": ["Clothing & Personal Care"],
-        "identity": ["Clothing & Personal Care"],
-        "truworths": ["Clothing & Personal Care"],
-        "foschini": ["Clothing & Personal Care"],
-        "tfg": ["Clothing & Personal Care"],
-        "sportscene": ["Clothing & Personal Care"],
-        "studio 88": ["Clothing & Personal Care"],
-        "easy equities": ["Savings & Investments"],
-        "african bank": ["Debt & Loans"],
-        "capitec loan": ["Debt & Loans"],
-        "nedbank loan": ["Debt & Loans"],
-        "standard bank loan": ["Debt & Loans"]
+        "checkers": [
+            "Groceries"
+        ],
+        "checkers sixty": [
+            "Groceries"
+        ],
+        "sixty60": [
+            "Groceries"
+        ],
+        "woolworths": [
+            "Groceries",
+            "Clothing & Personal Care"
+        ],
+        "woolworths food": [
+            "Groceries"
+        ],
+        "pick n pay": [
+            "Groceries"
+        ],
+        "pnp": [
+            "Groceries"
+        ],
+        "spar": [
+            "Groceries"
+        ],
+        "food lover": [
+            "Groceries"
+        ],
+        "food lovers": [
+            "Groceries"
+        ],
+        "usave": [
+            "Groceries"
+        ],
+        "shoprite": [
+            "Groceries"
+        ],
+        "boxer": [
+            "Groceries"
+        ],
+        "kfc": [
+            "Dining & Takeaways"
+        ],
+        "mcdonalds": [
+            "Dining & Takeaways"
+        ],
+        "mcdonald's": [
+            "Dining & Takeaways"
+        ],
+        "steers": [
+            "Dining & Takeaways"
+        ],
+        "nandos": [
+            "Dining & Takeaways"
+        ],
+        "nando's": [
+            "Dining & Takeaways"
+        ],
+        "debonairs": [
+            "Dining & Takeaways"
+        ],
+        "pizza hut": [
+            "Dining & Takeaways"
+        ],
+        "burger king": [
+            "Dining & Takeaways"
+        ],
+        "wimpy": [
+            "Dining & Takeaways"
+        ],
+        "roman's pizza": [
+            "Dining & Takeaways"
+        ],
+        "romans pizza": [
+            "Dining & Takeaways"
+        ],
+        "ocean basket": [
+            "Dining & Takeaways"
+        ],
+        "uber eats": [
+            "Dining & Takeaways"
+        ],
+        "ubereats": [
+            "Dining & Takeaways"
+        ],
+        "mr d": [
+            "Dining & Takeaways"
+        ],
+        "mr delivery": [
+            "Dining & Takeaways"
+        ],
+        "astron": [
+            "Transport & Fuel"
+        ],
+        "astron energy": [
+            "Transport & Fuel"
+        ],
+        "engen": [
+            "Transport & Fuel"
+        ],
+        "shell": [
+            "Transport & Fuel"
+        ],
+        "bp": [
+            "Transport & Fuel"
+        ],
+        "caltex": [
+            "Transport & Fuel"
+        ],
+        "sasol": [
+            "Transport & Fuel"
+        ],
+        "bolt": [
+            "Transport & Fuel"
+        ],
+        "gautrain": [
+            "Transport & Fuel"
+        ],
+        "uber": [
+            "Transport & Fuel"
+        ],
+        "eskom": [
+            "Utilities"
+        ],
+        "city power": [
+            "Utilities"
+        ],
+        "rand water": [
+            "Utilities"
+        ],
+        "telkom": [
+            "Utilities"
+        ],
+        "vodacom": [
+            "Utilities"
+        ],
+        "mtn": [
+            "Utilities"
+        ],
+        "cell c": [
+            "Utilities"
+        ],
+        "rain": [
+            "Utilities"
+        ],
+        "afrihost": [
+            "Utilities"
+        ],
+        "webafrica": [
+            "Utilities"
+        ],
+        "medihelp": [
+            "Medical & Health"
+        ],
+        "bonitas": [
+            "Medical & Health"
+        ],
+        "clicks": [
+            "Medical & Health"
+        ],
+        "clicks pharmacy": [
+            "Medical & Health"
+        ],
+        "dis-chem": [
+            "Medical & Health"
+        ],
+        "dischem": [
+            "Medical & Health"
+        ],
+        "netcare": [
+            "Medical & Health"
+        ],
+        "mediclinic": [
+            "Medical & Health"
+        ],
+        "life healthcare": [
+            "Medical & Health"
+        ],
+        "outsurance": [
+            "Insurance"
+        ],
+        "santam": [
+            "Insurance"
+        ],
+        "old mutual": [
+            "Insurance"
+        ],
+        "miway": [
+            "Insurance"
+        ],
+        "king price": [
+            "Insurance"
+        ],
+        "takealot": [
+            "Electronics & Appliances"
+        ],
+        "amazon": [
+            "Electronics & Appliances"
+        ],
+        "game stores": [
+            "Electronics & Appliances"
+        ],
+        "game": [
+            "Electronics & Appliances"
+        ],
+        "incredible connection": [
+            "Electronics & Appliances"
+        ],
+        "ict": [
+            "Electronics & Appliances"
+        ],
+        "hifi corp": [
+            "Electronics & Appliances"
+        ],
+        "apple": [
+            "Electronics & Appliances"
+        ],
+        "istore": [
+            "Electronics & Appliances"
+        ],
+        "samsung": [
+            "Electronics & Appliances"
+        ],
+        "evetech": [
+            "Electronics & Appliances"
+        ],
+        "wootware": [
+            "Electronics & Appliances"
+        ],
+        "netflix": [
+            "Entertainment & Subscriptions"
+        ],
+        "spotify": [
+            "Entertainment & Subscriptions"
+        ],
+        "showmax": [
+            "Entertainment & Subscriptions"
+        ],
+        "dstv": [
+            "Entertainment & Subscriptions"
+        ],
+        "amazon prime": [
+            "Entertainment & Subscriptions"
+        ],
+        "google play": [
+            "Entertainment & Subscriptions"
+        ],
+        "nintendo": [
+            "Entertainment & Subscriptions"
+        ],
+        "steam": [
+            "Entertainment & Subscriptions"
+        ],
+        "mr price": [
+            "Clothing & Personal Care"
+        ],
+        "mrp": [
+            "Clothing & Personal Care"
+        ],
+        "ackermans": [
+            "Clothing & Personal Care"
+        ],
+        "pep": [
+            "Clothing & Personal Care"
+        ],
+        "pep stores": [
+            "Clothing & Personal Care"
+        ],
+        "edgars": [
+            "Clothing & Personal Care"
+        ],
+        "jet": [
+            "Clothing & Personal Care"
+        ],
+        "identity": [
+            "Clothing & Personal Care"
+        ],
+        "truworths": [
+            "Clothing & Personal Care"
+        ],
+        "foschini": [
+            "Clothing & Personal Care"
+        ],
+        "tfg": [
+            "Clothing & Personal Care"
+        ],
+        "sportscene": [
+            "Clothing & Personal Care"
+        ],
+        "studio 88": [
+            "Clothing & Personal Care"
+        ],
+        "easy equities": [
+            "Savings & Investments"
+        ],
+        "african bank": [
+            "Debt & Loans"
+        ],
+        "capitec loan": [
+            "Debt & Loans"
+        ],
+        "nedbank loan": [
+            "Debt & Loans"
+        ],
+        "standard bank loan": [
+            "Debt & Loans"
+        ]
     }
-
 }
