@@ -35,7 +35,36 @@ def first_time_user():
     settings = load_settings()
     if settings["household_name"] == "":
         setup_screen()
-    #else:
-        #continue to main screen
+    else:
+        main_screen()
+        
+def main_screen():   
+    if "current_page" not in st.session_state:
+        st.session_state.current_page = "Dashboard"
+    
+    for page in ["Dashboard", "Uploads", "Transactions", "Settings"]:
+        if st.sidebar.button(page):
+            st.session_state.current_page = page
+    
+    pages = {
+    "Dashboard": dashboard_page,
+    "Uploads": uploads_page,
+    "Transactions": transactions_page,
+    "Settings": settings_page
+}
+
+    pages[st.session_state.current_page]()
+
+def dashboard_page():
+    st.title("Dashboard")
+    
+def uploads_page():
+    st.title("Uploads")
+    
+def transactions_page():
+    st.title("Transactions")
+    
+def settings_page():
+    st.title("Settings")
 
 first_time_user()

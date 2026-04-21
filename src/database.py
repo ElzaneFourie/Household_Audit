@@ -43,3 +43,46 @@ def get_members():
     cursor.execute("""SELECT * FROM household_members""")
     conn.close()
     return cursor.fetchall()
+
+def save_statement(member_id, month):
+    conn = sqlite3.connect("data/household.db")
+    cursor = conn.cursor()
+    cursor.execute("""INSERT INTO statements (member_id, month) VALUES (?,?)""", (member_id, month))
+    conn.commit()
+    statement_id = cursor.lastrowid
+    conn.close()
+    return statement_id
+
+def save_transaction(member_id, statement_id, category, description, transaction_date, amount):
+    conn = sqlite3.connect("data/household.db")
+    cursor = conn.cursor()
+    cursor.execute("""INSERT INTO transactions (member_id, statement_id, category, description, transaction_date, amount)
+                   VALUES (?,?,?,?,?,?)""", (member_id, statement_id, category, description, transaction_date, amount))
+    conn.commit()
+    conn.close()
+    
+def get_transactions(member_id=None, month=None):
+    conn = sqlite3.connect("data/household.db")
+    cursor = conn.cursor()
+    
+    query = """SELECT transactions.*
+            FROM transactions
+            JOIN statements ON transactions.statement_id = statements.statement_id"""
+    conditions = []
+    values = []
+    
+    if member_id is not None:
+        conditions.append("transactions.member_id = ?")
+        values.append(member_id)
+        
+    if month is not None:
+        conditions.append("statements.month = ?")
+        values.append(month)
+        
+    if conditions: query += " WHERE " + " AND ".join(conditions)
+    
+    cursor.execute(query, values)
+    results = cursor.fetchall()
+    conn.close()
+    
+    return results

@@ -1,8 +1,7 @@
 {
-    "household_name": "",
-
+    "household_name": "",  
     "members": [],
-    
+
     "bank_mappings": {
         "capitec": {
             "date": "Transaction Date",
